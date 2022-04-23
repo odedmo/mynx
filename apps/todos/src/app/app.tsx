@@ -36,8 +36,8 @@ const App = () => {
       {/* <NxWelcome title="todos" /> */}
       <h1>Todos</h1>
       <ul>
-        {todos.map((t) => (
-          <li className={'todo'}>{t.title}</li>
+        {todos.map((t, index) => (
+          <li key={index} className={'todo'}>{t.title}</li>
         ))}
       </ul>
       <button id={'add-todo'} onClick={addTodo}>
