@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 // import NxWelcome from './nx-welcome';
 
 interface Todo {
@@ -10,20 +10,25 @@ const StyledApp = styled.div`
   // Your style here
 `;
 
-export function App() {
+const App = () => {
 
-  const [todos, setTodos] = useState<Todo[]>([
-    { title: 'Todo 1' },
-    { title: 'Todo 2' },
-  ]);
+  const [todos, setTodos] = useState<Todo[]>([]);
+
+  useEffect(() => {
+    fetch('/api/todos')
+      .then((_) => _.json())
+      .then(setTodos);
+  }, []);
 
   function addTodo() {
-    setTodos([
-      ...todos,
-      {
-        title: `New todo ${Math.floor(Math.random() * 1000)}`,
-      },
-    ]);
+    fetch('/api/addTodo', {
+      method: 'POST',
+      body: '',
+    })
+      .then((_) => _.json())
+      .then((newTodo) => {
+        setTodos([...todos, newTodo]);
+      });
   }
 
   return (
