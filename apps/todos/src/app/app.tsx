@@ -1,10 +1,7 @@
 import styled from '@emotion/styled';
 import { useEffect, useState } from 'react';
+import { Todo } from '@mynx/data';
 // import NxWelcome from './nx-welcome';
-
-interface Todo {
-  title: string;
-}
 
 const StyledApp = styled.div`
   // Your style here
