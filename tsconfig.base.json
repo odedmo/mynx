@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@mynx/data": ["libs/data/src/index.ts"]
+      "@mynx/data": ["libs/data/src/index.ts"],
+      "@mynx/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

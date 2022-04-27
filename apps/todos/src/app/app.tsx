@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { useEffect, useState } from 'react';
 import { Todo } from '@mynx/data';
-// import NxWelcome from './nx-welcome';
+import { Todos } from '@mynx/ui';
 
 const StyledApp = styled.div`
   // Your style here
@@ -30,13 +30,8 @@ const App = () => {
 
   return (
     <StyledApp>
-      {/* <NxWelcome title="todos" /> */}
       <h1>Todos</h1>
-      <ul>
-        {todos.map((t, index) => (
-          <li key={index} className={'todo'}>{t.title}</li>
-        ))}
-      </ul>
+      <Todos todos={todos} />
       <button id={'add-todo'} onClick={addTodo}>
         Add Todo
       </button>
