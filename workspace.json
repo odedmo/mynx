@@ -3,6 +3,8 @@
   "projects": {
     "api": "apps/api",
     "data": "libs/data",
+    "mynext": "apps/mynext",
+    "mynext-e2e": "apps/mynext-e2e",
     "todos": "apps/todos",
     "todos-e2e": "apps/todos-e2e",
     "ui": "libs/ui"
