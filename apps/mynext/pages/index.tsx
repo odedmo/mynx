@@ -1,8 +1,18 @@
-import styled from '@emotion/styled';
-import Link from 'next/link';
-
+import styled from '@emotion/styled'
+import Link from 'next/link'
 import Head from 'next/head'
 import Image from 'next/image'
+
+export async function getStaticProps() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const data = await res.json();
+
+  return {
+    props: {
+      people: data,
+    },
+  };
+}
 
 const StyledPage = styled.div`
   .page {
@@ -11,7 +21,7 @@ const StyledPage = styled.div`
 
 const StyledH1 = styled.h1``;
 
-export function Index() {
+export function Index({people}) {
   /*
    * Replace the elements below with your own.
    *
@@ -35,8 +45,25 @@ export function Index() {
           <a>this page!</a>
         </Link>
       </StyledH1>
+
+      <section>
+        <h2>Blog</h2>
+        <ul>
+          {people.map(({ id, email, name }) => (
+            <li key={id}>
+              {name}
+              <br />
+              {id}
+              <br />
+              {email}
+            </li>
+          ))}
+        </ul>
+      </section>
+
     </StyledPage>
   );
 }
+
 
 export default Index;

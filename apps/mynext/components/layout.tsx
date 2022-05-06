@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
 import Head from 'next/head'
-import Link from 'next/link'
 
 const StyledLayout = styled.div`
   width: 80%;
