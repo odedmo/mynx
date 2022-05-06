@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@mynx/data": ["libs/data/src/index.ts"],
-      "@mynx/ui": ["libs/ui/src/index.ts"]
+      "@mynx/ui": ["libs/ui/src/index.ts"],
+      "@mynx/mynext/layout": ["apps/mynext/components/layout"]
     }
   },
   "exclude": ["node_modules", "tmp"]

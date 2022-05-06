@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import './styles.css';
+import Layout from '@mynx/mynext/layout'
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
@@ -9,7 +10,9 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>Welcome to mynext!</title>
       </Head>
       <main className="app">
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </main>
     </>
   );
