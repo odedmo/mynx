@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
+import Head from 'next/head'
 import Image from 'next/image'
 
 const StyledPage = styled.div`
@@ -18,7 +19,9 @@ export function Index() {
    */
   return (
     <StyledPage>
-
+      <Head>
+        <title>Home</title>
+      </Head>
       <Image
         src="/images/profile.png" // Route of the image file
         height={200} // Desired size with correct aspect ratio
