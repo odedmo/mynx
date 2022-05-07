@@ -41,7 +41,7 @@ export function Index({people}) {
 
       <StyledH1>
         Read{' '}
-        <Link href="/posts">
+        <Link href="/users">
           <a>this page!</a>
         </Link>
       </StyledH1>

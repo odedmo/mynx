@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Script from 'next/script'
 
 /* eslint-disable-next-line */
-export interface PostsProps {}
+export interface UsersProps {}
 
 const StyledPosts = styled.div`
   color: pink;
@@ -12,11 +12,11 @@ const StyledPosts = styled.div`
 
 const StyledH1 = styled.h1``
 
-export function Posts(props: PostsProps) {
+export function Users(props: UsersProps) {
   return (
     <StyledPosts>
       <Head>
-        <title>Posts</title>
+        <title>Users</title>
       </Head>
       <Script
         src="https://connect.facebook.net/en_US/sdk.js"
@@ -25,7 +25,7 @@ export function Posts(props: PostsProps) {
           console.log(`script loaded correctly, window.FB has been populated`)
         }
       />
-      <StyledH1>Posts</StyledH1>
+      <StyledH1>Users</StyledH1>
       <div>
         <Link href="/">
           <a>Back to home</a>
@@ -35,4 +35,4 @@ export function Posts(props: PostsProps) {
   );
 }
 
-export default Posts;
+export default Users;
