@@ -1,12 +1,20 @@
+import Head from 'next/head'
+
 export default function User({userData}) {
   return (
-    <div>
-      {userData.name}
-      <br />
-      {userData.id}
-      <br />
-      {userData.email}
-    </div>
+    <>
+      <Head>
+        <title>
+          {userData.username}
+        </title>
+        <div>
+          {userData.name}
+          <br />
+          {userData.id}
+          <br />
+          {userData.email}
+        </div>
+      </Head></>
   )
 }
 
