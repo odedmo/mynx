@@ -49,16 +49,15 @@ export function Index({people}) {
       <section>
         <h2>Blog</h2>
         <ul>
-          {people.map(({ id, email, name }) => (
+          {people.map(({ id, name }) => (
             <li key={id}>
-              {name}
-              <br />
-              {id}
-              <br />
-              {email}
+              <Link href={`/users/${id}`}>
+                <a>{name}</a>
+              </Link>
             </li>
           ))}
         </ul>
+
       </section>
 
     </StyledPage>
