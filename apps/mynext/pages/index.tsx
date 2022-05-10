@@ -51,7 +51,7 @@ export function Index({people}) {
         <ul>
           {people.map(({ id, name }) => (
             <li key={id}>
-              <Link href={`/users/${id}`}>
+              <Link href={`/users/${encodeURIComponent(id)}`}>
                 <a>{name}</a>
               </Link>
             </li>

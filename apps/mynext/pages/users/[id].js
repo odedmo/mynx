@@ -7,14 +7,15 @@ export default function User({userData}) {
         <title>
           {userData.username}
         </title>
-        <div>
-          {userData.name}
-          <br />
-          {userData.id}
-          <br />
-          {userData.email}
-        </div>
-      </Head></>
+      </Head>
+      <div>
+        {userData.name}
+        <br />
+        {userData.id}
+        <br />
+        {userData.email}
+      </div>
+    </>
   )
 }
 
