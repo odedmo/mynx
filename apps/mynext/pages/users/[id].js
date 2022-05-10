@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { getAllUsersIds, getUserData } from '../../utils/users';
 
 export default function User({userData}) {
   return (
@@ -20,20 +21,7 @@ export default function User({userData}) {
 }
 
 export async function getStaticPaths() {
-
-  const paths = [
-    {
-      params: {
-        id: '1'
-      },
-    },
-    {
-      params: {
-        id: '2'
-      },
-    }
-  ]
-
+  const paths = await getAllUsersIds()
   return {
     paths,
     fallback: false
@@ -41,9 +29,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const res = await fetch("https://jsonplaceholder.typicode.com/users");
-  const users = await res.json();
-  const userData = users.filter(user => user.id == params.id)[0]
+  const userData = await getUserData(params.id)
   return {
     props: {
       userData
