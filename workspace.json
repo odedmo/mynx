@@ -7,8 +7,6 @@
     "mynext-e2e": "apps/mynext-e2e",
     "todos": "apps/todos",
     "todos-e2e": "apps/todos-e2e",
-    "ui": "libs/ui",
-    "vercel-test": "apps/vercel-test",
-    "vercel-test-e2e": "apps/vercel-test-e2e"
+    "ui": "libs/ui"
   }
 }
